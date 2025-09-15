@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jual Beli Barang Bekas - Secondhand Treasure</title>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <h1>Secondhand Treasure</h1>
+        <p>Platform jual beli barang bekas terpercaya</p>
+        
+        <nav>
+            <ul>
+                <li><a href="#beranda">Beranda</a></li>
+                <li><a href="#kategori">Kategori</a></li>
+                <li><a href="#cara-kerja">Cara Kerja</a></li>
+                <li><a href="#tentang">Tentang Kami</a></li>
+                <li><a href="#daftar">Daftar</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section id="beranda">
+            <h2>Temukan Barang Bekas Berkualitas dengan Harga Terjangkau</h2>
+            <p>Jual dan beli barang bekas mudah, aman, dan terpercaya</p>
+            
+            <form action="/search" method="GET">
+                <label for="search">Cari barang:</label>
+                <input type="text" id="search" name="search" placeholder="Masukkan nama barang...">
+                
+                <label for="category">Kategori:</label>
+                <select id="category" name="category">
+                    <option value="all">Semua Kategori</option>
+                    <option value="fashion">Fashion</option>
+                    <option value="electronics">Elektronik</option>
+                    <option value="furniture">Furnitur</option>
+                    <option value="hobbies">Hobi & Koleksi</option>
+                </select>
+                
+                <button type="submit">Cari</button>
+            </form>
+        </section>
+
+        <!-- Categories Section -->
+        <section id="kategori">
+            <h2>Kategori Populer</h2>
+            
+            <article>
+                <h3>Fashion</h3>
+                <p>Temukan pakaian, tas, dan sepatu bekas berkualitas</p>
+            </article>
+            
+            <article>
+                <h3>Elektronik</h3>
+                <p>Smartphone, laptop, dan gadget lainnya dengan harga terjangkau</p>
+            </article>
+            
+            <article>
+                <h3>Furnitur</h3>
+                <p>Perabotan rumah tangga bekas dengan kondisi masih baik</p>
+            </article>
+            
+            <article>
+                <h3>Hobi & Koleksi</h3>
+                <p>Barang koleksi dan perlengkapan hobi preloved</p>
+            </article>
+        </section>
+
+        <!-- Featured Products -->
+        <section>
+            <h2>Barang Pilihan</h2>
+            
+            <article>
+                <h3>Tas Branded Preloved</h3>
+                <p>Kondisi: 90% baru</p>
+                <p>Harga: Rp 450.000</p>
+                <p>Lokasi: Jakarta Barat</p>
+            </article>
+            
+            <article>
+                <h3>Kamera DSLR Canon</h3>
+                <p>Kondisi: 85% baru</p>
+                <p>Harga: Rp 2.500.000</p>
+                <p>Lokasi: Surabaya</p>
+            </article>
+            
+            <article>
+                <h3>Sepatu Sneakers</h3>
+                <p>Kondisi: 80% baru</p>
+                <p>Harga: Rp 350.000</p>
+                <p>Lokasi: Bandung</p>
+            </article>
+        </section>
+
+        <!-- How It Works -->
+        <section id="cara-kerja">
+            <h2>Bagaimana Cara Kerjanya?</h2>
+            
+            <article>
+                <h3>Untuk Pembeli</h3>
+                <ol>
+                    <li>Jelajahi katalog barang</li>
+                    <li>Pilih barang yang diinginkan</li>
+                    <li>Lakukan pembayaran</li>
+                    <li>Tunggu barang sampai</li>
+                </ol>
+            </article>
+            
+            <article>
+                <h3>Untuk Penjual</h3>
+                <ol>
+                    <li>Daftar sebagai penjual</li>
+                    <li>Unggah foto barang</li>
+                    <li>Tentukan harga</li>
+                    <li>Barang terjual</li>
+                </ol>
+            </article>
+        </section>
+
+        <!-- Registration Form -->
+        <section id="daftar">
+            <h2>Daftar Sekarang</h2>
+            
+            <form action="/register" method="POST">
+                <label for="nama">Nama Lengkap:</label>
+                <input type="text" id="nama" name="nama" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                
+                <label for="role">Saya ingin:</label>
+                <select id="role" name="role">
+                    <option value="buyer">Beli barang</option>
+                    <option value="seller">Jual barang</option>
+                    <option value="both">Keduanya</option>
+                </select>
+                
+                <button type="submit">Daftar</button>
+            </form>
+        </section>
+
+        <!-- About Section -->
+        <section id="tentang">
+            <h2>Tentang Kami</h2>
+            <p>Secondhand Treasure adalah platform jual beli barang bekas yang aman dan terpercaya. Kami memudahkan Anda untuk menemukan barang bekas berkualitas dengan harga terjangkau.</p>
+            
+            <address>
+                <p>Email: info@secondhantreasure.com</p>
+                <p>Telepon: (628) 8888-8888</p>
+                <p>Alamat: Jl. KS.Tubun</p>
+            </address>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Secondhand Treasure. Semua hak dilindungi.</p>
+        <nav>
+            <ul>
+                <li><a href="#">Syarat & Ketentuan</a></li>
+                <li><a href="#">Kebijakan Privasi</a></li>
+                <li><a href="#">Bantuan</a></li>
+                <p> Inspired By : <a href="https://preloved.co.id/" target="_blank">Preloved</a> </p>
+            </ul>
+        </nav>
+    </footer>
+</body>
+</html>
