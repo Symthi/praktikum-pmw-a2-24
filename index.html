@@ -4,173 +4,261 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jual Beli Barang Bekas - Secondhand Treasure</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <!-- Header Section -->
-    <header>
-        <h1>Secondhand Treasure</h1>
-        <p>Platform jual beli barang bekas terpercaya</p>
-        
-        <nav>
-            <ul>
-                <li><a href="#beranda">Beranda</a></li>
-                <li><a href="#kategori">Kategori</a></li>
-                <li><a href="#cara-kerja">Cara Kerja</a></li>
-                <li><a href="#tentang">Tentang Kami</a></li>
-                <li><a href="#daftar">Daftar</a></li>
-            </ul>
-        </nav>
+    <header class="header">
+        <div class="container header-container">
+            <a href="#" class="logo">Secondhand <span>Treasure</span></a>
+            <p class="tagline">Platform jual beli barang bekas terpercaya</p>
+            
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="#beranda" class="nav-link">Beranda</a></li>
+                    <li><a href="#kategori" class="nav-link">Kategori</a></li>
+                    <li><a href="#cara-kerja" class="nav-link">Cara Kerja</a></li>
+                    <li><a href="#tentang" class="nav-link">Tentang Kami</a></li>
+                    <li><a href="#daftar" class="nav-link">Daftar</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <!-- Main Content -->
     <main>
         <!-- Hero Section -->
-        <section id="beranda">
-            <h2>Temukan Barang Bekas Berkualitas dengan Harga Terjangkau</h2>
-            <p>Jual dan beli barang bekas mudah, aman, dan terpercaya</p>
-            
-            <form action="/search" method="GET">
-                <label for="search">Cari barang:</label>
-                <input type="text" id="search" name="search" placeholder="Masukkan nama barang...">
+        <section id="beranda" class="hero">
+            <div class="container">
+                <h2 class="hero-title">Temukan Barang Bekas Berkualitas dengan Harga Terjangkau</h2>
+                <p class="hero-subtitle">Jual dan beli barang bekas mudah, aman, dan terpercaya</p>
                 
-                <label for="category">Kategori:</label>
-                <select id="category" name="category">
-                    <option value="all">Semua Kategori</option>
-                    <option value="fashion">Fashion</option>
-                    <option value="electronics">Elektronik</option>
-                    <option value="furniture">Furnitur</option>
-                    <option value="hobbies">Hobi & Koleksi</option>
-                </select>
-                
-                <button type="submit">Cari</button>
-            </form>
+                <form action="/search" method="GET" class="search-form">
+                    <div class="form-group">
+                        <input type="text" id="search" name="search" class="form-control" placeholder="Masukkan nama barang...">
+                    </div>
+                    
+                    <div class="form-group">
+                        <select id="category" name="category" class="form-control">
+                            <option value="all">Semua Kategori</option>
+                            <option value="fashion">Fashion</option>
+                            <option value="electronics">Elektronik</option>
+                            <option value="furniture">Furnitur</option>
+                            <option value="hobbies">Hobi & Koleksi</option>
+                        </select>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">Cari</button>
+                </form>
+            </div>
         </section>
 
-        <!-- Categories Section -->
-        <section id="kategori">
-            <h2>Kategori Populer</h2>
-            
-            <article>
-                <h3>Fashion</h3>
-                <p>Temukan pakaian, tas, dan sepatu bekas berkualitas</p>
+<!-- Categories Section -->
+<section id="kategori" class="section">
+    <div class="container">
+        <h2 class="section-title">Kategori Populer</h2>
+        
+        <div class="categories-grid">
+            <article class="category-card">
+                <div class="category-icon">👕</div>
+                <h3 class="category-title">Fashion</h3>
+                <p class="category-description">Temukan pakaian, tas, dan sepatu bekas berkualitas</p>
+                <a href="#" class="btn btn-primary category-btn">Jelajahi</a>
             </article>
             
-            <article>
-                <h3>Elektronik</h3>
-                <p>Smartphone, laptop, dan gadget lainnya dengan harga terjangkau</p>
+            <article class="category-card">
+                <div class="category-icon">📱</div>
+                <h3 class="category-title">Elektronik</h3>
+                <p class="category-description">Smartphone, laptop, dan gadget Second lainnya dengan harga terjangkau</p>
+                <a href="#" class="btn btn-primary category-btn">Jelajahi</a>
             </article>
             
-            <article>
-                <h3>Furnitur</h3>
-                <p>Perabotan rumah tangga bekas dengan kondisi masih baik</p>
+            <article class="category-card">
+                <div class="category-icon">🛋️</div>
+                <h3 class="category-title">Furnitur</h3>
+                <p class="category-description">Perabotan rumah tangga bekas dengan kondisi masih baik</p>
+                <a href="#" class="btn btn-primary category-btn">Jelajahi</a>
             </article>
             
-            <article>
-                <h3>Hobi & Koleksi</h3>
-                <p>Barang koleksi dan perlengkapan hobi preloved</p>
+            <article class="category-card">
+                <div class="category-icon">🎮</div>
+                <h3 class="category-title">Hobi & Koleksi</h3>
+                <p class="category-description">Barang koleksi dan perlengkapan</p>
+                <a href="#" class="btn btn-primary category-btn">Jelajahi</a>
             </article>
-        </section>
+        </div>
+    </div>
+</section>
 
         <!-- Featured Products -->
-        <section>
-            <h2>Barang Pilihan</h2>
-            
-            <article>
-                <h3>Tas Branded Preloved</h3>
-                <p>Kondisi: 90% baru</p>
-                <p>Harga: Rp 450.000</p>
-                <p>Lokasi: Jakarta Barat</p>
-            </article>
-            
-            <article>
-                <h3>Kamera DSLR Canon</h3>
-                <p>Kondisi: 85% baru</p>
-                <p>Harga: Rp 2.500.000</p>
-                <p>Lokasi: Surabaya</p>
-            </article>
-            
-            <article>
-                <h3>Sepatu Sneakers</h3>
-                <p>Kondisi: 80% baru</p>
-                <p>Harga: Rp 350.000</p>
-                <p>Lokasi: Bandung</p>
-            </article>
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">Barang Pilihan</h2>
+                
+                <div class="products-grid">
+                    <article class="card card-featured">
+                        <h3>Tas GUCCI</h3>
+                        <span class="product-condition">Kondisi: 85% baru</span>
+                        <p class="product-price">Rp 15.000.000</p>
+                        <p>Lokasi: Jakarta Barat</p>
+                        <a href="#" class="btn btn-secondary mt-md">Lihat Detail</a>
+                    </article>
+                    
+                    <article class="card">
+                        <h3>Kamera DSLR Canon</h3>
+                        <span class="product-condition">Kondisi: 95% baru</span>
+                        <p class="product-price">Rp 2.500.000</p>
+                        <p>Lokasi: Surabaya</p>
+                        <a href="#" class="btn btn-secondary mt-md">Lihat Detail</a>
+                    </article>
+                    
+                    <article class="card">
+                        <h3>Sepatu Converse</h3>
+                        <span class="product-condition">Kondisi: 75% baru</span>
+                        <p class="product-price">Rp 850.000</p>
+                        <p>Lokasi: Bandung</p>
+                        <a href="#" class="btn btn-secondary mt-md">Lihat Detail</a>
+                    </article>
+                </div>
+            </div>
         </section>
 
-        <!-- How It Works -->
-        <section id="cara-kerja">
-            <h2>Bagaimana Cara Kerjanya?</h2>
-            
-            <article>
-                <h3>Untuk Pembeli</h3>
-                <ol>
-                    <li>Jelajahi katalog barang</li>
-                    <li>Pilih barang yang diinginkan</li>
-                    <li>Lakukan pembayaran</li>
-                    <li>Tunggu barang sampai</li>
+<!-- How It Works -->
+<section id="cara-kerja" class="section how-it-works">
+    <div class="container">
+        <h2 class="section-title">Bagaimana Cara Kerjanya?</h2>
+        
+        <div class="steps-container">
+            <article class="step-card">
+                <div class="step-header">
+                    <div class="step-icon">
+                        <i>🛒</i>
+                    </div>
+                    <h3 class="step-title">Untuk Pembeli</h3>
+                </div>
+                <ol class="step-list">
+                    <li class="step-item">
+                        <p class="step-text">Jelajahi katalog barang</p>
+                    </li>
+                    <li class="step-item">
+                        <p class="step-text">Pilih barang yang diinginkan</p>
+                    </li>
+                    <li class="step-item">
+                        <p class="step-text">Lakukan pembayaran</p>
+                    </li>
+                    <li class="step-item">
+                        <p class="step-text">Tunggu barang sampai</p>
+                    </li>
                 </ol>
             </article>
             
-            <article>
-                <h3>Untuk Penjual</h3>
-                <ol>
-                    <li>Daftar sebagai penjual</li>
-                    <li>Unggah foto barang</li>
-                    <li>Tentukan harga</li>
-                    <li>Barang terjual</li>
+            <article class="step-card">
+                <div class="step-header">
+                    <div class="step-icon">
+                        <i>💰</i>
+                    </div>
+                    <h3 class="step-title">Untuk Penjual</h3>
+                </div>
+                <ol class="step-list">
+                    <li class="step-item">
+                        <p class="step-text">Daftar sebagai penjual</p>
+                    </li>
+                    <li class="step-item">
+                        <p class="step-text">Unggah foto barang</p>
+                    </li>
+                    <li class="step-item">
+                        <p class="step-text">Tentukan harga</p>
+                    </li>
+                    <li class="step-item">
+                        <p class="step-text">Barang terjual</p>
+                    </li>
                 </ol>
             </article>
-        </section>
+        </div>
+    </div>
+</section>
 
         <!-- Registration Form -->
-        <section id="daftar">
-            <h2>Daftar Sekarang</h2>
-            
-            <form action="/register" method="POST">
-                <label for="nama">Nama Lengkap:</label>
-                <input type="text" id="nama" name="nama" required>
+        <section id="daftar" class="section">
+            <div class="container">
+                <h2 class="section-title">Daftar Sekarang</h2>
                 
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-                
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" required>
-                
-                <label for="role">Saya ingin:</label>
-                <select id="role" name="role">
-                    <option value="buyer">Beli barang</option>
-                    <option value="seller">Jual barang</option>
-                    <option value="both">Keduanya</option>
-                </select>
-                
-                <button type="submit">Daftar</button>
-            </form>
+                <form action="/register" method="POST" class="registration-form">
+                    <div class="form-group">
+                        <label for="nama" class="form-label">Nama Lengkap:</label>
+                        <input type="text" id="nama" name="nama" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email:</label>
+                        <input type="email" id="email" name="email" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="password" class="form-label">Password:</label>
+                        <input type="password" id="password" name="password" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="role" class="form-label">Saya ingin:</label>
+                        <select id="role" name="role" class="form-control">
+                            <option value="buyer">Beli barang</option>
+                            <option value="seller">Jual barang</option>
+                            <option value="both">Keduanya</option>
+                        </select>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">Daftar</button>
+                </form>
+            </div>
         </section>
 
         <!-- About Section -->
-        <section id="tentang">
-            <h2>Tentang Kami</h2>
-            <p>Secondhand Treasure adalah platform jual beli barang bekas yang aman dan terpercaya. Kami memudahkan Anda untuk menemukan barang bekas berkualitas dengan harga terjangkau.</p>
-            
-            <address>
-                <p>Email: info@secondhantreasure.com</p>
-                <p>Telepon: (628) 8888-8888</p>
-                <p>Alamat: Jl. KS.Tubun</p>
-            </address>
+        <section id="tentang" class="section">
+            <div class="container">
+                <h2 class="section-title">Tentang Kami</h2>
+                
+                <div class="about-content">
+                    <div>
+                        <p>Secondhand Treasure adalah platform jual beli barang bekas yang aman dan terpercaya. Kami memudahkan Anda untuk menemukan barang bekas berkualitas dengan harga terjangkau.</p>
+                    </div>
+                    
+                    <address class="contact-info">
+                        <p>📧 info@secondhantreasure.com</p>
+                        <p>📞 (628) 8888-8888</p>
+                        <p>📍 Jl. KS.Tubun</p>
+                    </address>
+                </div>
+            </div>
         </section>
     </main>
 
     <!-- Footer -->
-    <footer>
-        <p>&copy; 2025 Secondhand Treasure. Semua hak dilindungi.</p>
-        <nav>
-            <ul>
-                <li><a href="#">Syarat & Ketentuan</a></li>
-                <li><a href="#">Kebijakan Privasi</a></li>
-                <li><a href="#">Bantuan</a></li>
-                <p> Inspired By : <a href="https://preloved.co.id/" target="_blank">Preloved</a> </p>
-            </ul>
-        </nav>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-container">
+                <div>
+                    <h3>Secondhand Treasure</h3>
+                    <p>Platform jual beli barang bekas terpercaya di Indonesia</p>
+                </div>
+                
+                <nav>
+                    <ul class="footer-nav">
+                        <li><a href="#" class="footer-link">Syarat & Ketentuan</a></li>
+                        <li><a href="#" class="footer-link">Kebijakan Privasi</a></li>
+                        <li><a href="#" class="footer-link">Bantuan</a></li>
+                    </ul>
+                </nav>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 Secondhand Treasure. Semua hak dilindungi.</p>
+                <p>Inspired By : <a href="https://preloved.co.id/" target="_blank" class="footer-link">Preloved</a></p>
+            </div>
+        </div>
     </footer>
 </body>
 </html>
