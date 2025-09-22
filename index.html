@@ -3,262 +3,357 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jual Beli Barang Bekas - Secondhand Treasure</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <title>Secondhand Treasure - Jual Beli Barang Bekas</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pirata+One&family=Cinzel+Decorative:wght@400;700&family=Quicksand:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <!-- Header Section -->
-    <header class="header">
-        <div class="container header-container">
-            <a href="#" class="logo">Secondhand <span>Treasure</span></a>
-            <p class="tagline">Platform jual beli barang bekas terpercaya</p>
-            
-            <nav>
-                <ul class="nav-menu">
-                    <li><a href="#beranda" class="nav-link">Beranda</a></li>
-                    <li><a href="#kategori" class="nav-link">Kategori</a></li>
-                    <li><a href="#cara-kerja" class="nav-link">Cara Kerja</a></li>
-                    <li><a href="#tentang" class="nav-link">Tentang Kami</a></li>
-                    <li><a href="#daftar" class="nav-link">Daftar</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <!-- Main Content -->
-    <main>
-        <!-- Hero Section -->
-        <section id="beranda" class="hero">
-            <div class="container">
-                <h2 class="hero-title">Temukan Barang Bekas Berkualitas dengan Harga Terjangkau</h2>
-                <p class="hero-subtitle">Jual dan beli barang bekas mudah, aman, dan terpercaya</p>
-                
-                <form action="/search" method="GET" class="search-form">
-                    <div class="form-group">
-                        <input type="text" id="search" name="search" class="form-control" placeholder="Masukkan nama barang...">
-                    </div>
-                    
-                    <div class="form-group">
-                        <select id="category" name="category" class="form-control">
-                            <option value="all">Semua Kategori</option>
-                            <option value="fashion">Fashion</option>
-                            <option value="electronics">Elektronik</option>
-                            <option value="furniture">Furnitur</option>
-                            <option value="hobbies">Hobi & Koleksi</option>
-                        </select>
-                    </div>
-                    
-                    <button type="submit" class="btn btn-primary">Cari</button>
-                </form>
+    <!-- Navigation dengan Peta Harta Karun -->
+    <nav class="treasure-nav">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <div class="compass-icon">
+                    <i class="fas fa-compass"></i>
+                </div>
+                <h1>Secondhand Treasure</h1>
+                <div class="treasure-chest">
+                    <i class="fas fa-chess-queen"></i>
+                </div>
             </div>
-        </section>
-
-<!-- Categories Section -->
-<section id="kategori" class="section">
-    <div class="container">
-        <h2 class="section-title">Kategori Populer</h2>
-        
-        <div class="categories-grid">
-            <article class="category-card">
-                <div class="category-icon">👕</div>
-                <h3 class="category-title">Fashion</h3>
-                <p class="category-description">Temukan pakaian, tas, dan sepatu bekas berkualitas</p>
-                <a href="#" class="btn btn-primary category-btn">Jelajahi</a>
-            </article>
-            
-            <article class="category-card">
-                <div class="category-icon">📱</div>
-                <h3 class="category-title">Elektronik</h3>
-                <p class="category-description">Smartphone, laptop, dan gadget Second lainnya dengan harga terjangkau</p>
-                <a href="#" class="btn btn-primary category-btn">Jelajahi</a>
-            </article>
-            
-            <article class="category-card">
-                <div class="category-icon">🛋️</div>
-                <h3 class="category-title">Furnitur</h3>
-                <p class="category-description">Perabotan rumah tangga bekas dengan kondisi masih baik</p>
-                <a href="#" class="btn btn-primary category-btn">Jelajahi</a>
-            </article>
-            
-            <article class="category-card">
-                <div class="category-icon">🎮</div>
-                <h3 class="category-title">Hobi & Koleksi</h3>
-                <p class="category-description">Barang koleksi dan perlengkapan</p>
-                <a href="#" class="btn btn-primary category-btn">Jelajahi</a>
-            </article>
+            <ul class="nav-links">
+                <li><a href="#home" class="nav-link"><i class="fas fa-home"></i> Beranda</a></li>
+                <li><a href="#products" class="nav-link"><i class="fas fa-gem"></i> Harta Karun</a></li>
+                <li><a href="#categories" class="nav-link"><i class="fas fa-map"></i> Peta Kategori</a></li>
+                <li><a href="#about" class="nav-link"><i class="fas fa-ship"></i> Tentang Kami</a></li>
+                <li><a href="#contact" class="nav-link"><i class="fas fa-anchor"></i> Kontak</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="btn-search"><i class="fas fa-search"></i></button>
+                <button class="btn-cart"><i class="fas fa-treasure-chest"></i> <span class="cart-count">3</span></button>
+            </div>
+            <div class="mobile-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
-    </div>
-</section>
+    </nav>
 
-        <!-- Featured Products -->
-        <section class="section">
-            <div class="container">
-                <h2 class="section-title">Barang Pilihan</h2>
-                
-                <div class="products-grid">
-                    <article class="card card-featured">
-                        <h3>Tas GUCCI</h3>
-                        <span class="product-condition">Kondisi: 85% baru</span>
-                        <p class="product-price">Rp 15.000.000</p>
-                        <p>Lokasi: Jakarta Barat</p>
-                        <a href="#" class="btn btn-secondary mt-md">Lihat Detail</a>
-                    </article>
-                    
-                    <article class="card">
-                        <h3>Kamera DSLR Canon</h3>
-                        <span class="product-condition">Kondisi: 95% baru</span>
-                        <p class="product-price">Rp 2.500.000</p>
-                        <p>Lokasi: Surabaya</p>
-                        <a href="#" class="btn btn-secondary mt-md">Lihat Detail</a>
-                    </article>
-                    
-                    <article class="card">
+    <!-- Hero Section dengan Peta Harta Karun Interaktif -->
+    <section id="home" class="hero-treasure">
+        <div class="treasure-map">
+            <div class="map-container">
+                <div class="island-shape">
+                    <div class="treasure-spot spot-1" data-product="elektronik">
+                        <div class="spot-marker"><i class="fas fa-bolt"></i></div>
+                        <div class="spot-tooltip">Elektronik Bekas</div>
+                    </div>
+                    <div class="treasure-spot spot-2" data-product="furnitur">
+                        <div class="spot-marker"><i class="fas fa-couch"></i></div>
+                        <div class="spot-tooltip">Furnitur Klasik</div>
+                    </div>
+                    <div class="treasure-spot spot-3" data-product="buku">
+                        <div class="spot-marker"><i class="fas fa-book"></i></div>
+                        <div class="spot-tooltip">Buku Langka</div>
+                    </div>
+                    <div class="treasure-spot spot-4" data-product="pakaian">
+                        <div class="spot-marker"><i class="fas fa-tshirt"></i></div>
+                        <div class="spot-tooltip">Pakaian Vintage</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <h2><span class="highlight">Jelajahi Pulau</span> Harta Karun Bekas</h2>
+                <p>Temukan barang-barang bekas berkualitas yang tersembunyi seperti harta karun di pulau misterius. Setiap penemuan memiliki cerita dan nilai tersendiri.</p>
+                <div class="hero-actions">
+                    <button class="btn-treasure">Mulai Pencarian <i class="fas fa-map-marked-alt"></i></button>
+                    <button class="btn-guide">Panduan Pemburu <i class="fas fa-scroll"></i></button>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="floating-treasure">
+                    <div class="treasure-item">
+                        <i class="fas fa-camera"></i>
+                    </div>
+                    <div class="treasure-item">
+                        <i class="fas fa-headphones"></i>
+                    </div>
+                    <div class="treasure-item">
+                        <i class="fas fa-gamepad"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Produk Unggulan dengan Tampilan Peti Harta Karun -->
+    <section id="products" class="treasure-products">
+        <div class="section-header">
+            <h2>Peti Harta Karun Terkini</h2>
+            <p>Barang-barang bekas berkualitas yang baru saja ditemukan</p>
+        </div>
+        <div class="products-container">
+            <div class="treasure-chest-product">
+                <div class="chest-lid">
+                    <div class="chest-handle"></div>
+                </div>
+                <div class="chest-content">
+                    <div class="product-card">
+                        <div class="product-badge">Baru Ditambahkan</div>
+                        <div class="product-image">
+                            <img src ="img/kamera_vintage.jpeg" alt="Kamera Vintage">
+                        </div>
+                        <div class="product-info">
+                            <h3>Kamera Film Vintage</h3>
+                            <p>Kamera analog tahun 1980-an, kondisi masih berfungsi sempurna.</p>
+                            <div class="product-meta">
+                                <span class="product-era"><i class="fas fa-hourglass-half"></i> Era 80-an</span>
+                                <span class="product-condition"><i class="fas fa-check-circle"></i> Baik</span>
+                            </div>
+                            <div class="product-price">Rp 850.000</div>
+                            <button class="btn-dig">Gali Harta Ini <i class="fas fa-shovel"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="products-grid">
+                <div class="product-item">
+                    <div class="product-image">
+                        <img src="img/tas_gucci.jpeg" alt="Tas Gucci">
+                        <div class="product-overlay">
+                            <button class="btn-quick-view"><i class="fas fa-eye"></i> Lihat Cepat</button>
+                        </div>
+                    </div>
+                    <div class="product-details">
+                        <h3>Tas Gucci</h3>
+                        <p>Tas masih keadaan baik, 2 kali dipakai BU</p>
+                        <div class="product-price">Rp 15.000.000</div>
+                        <div class="product-actions">
+                            <button class="btn-wishlist"><i class="far fa-gem"></i></button>
+                            <button class="btn-add-cart">+ Keranjang</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-item">
+                    <div class="product-image">
+                        <img src="img/jam_tangan.jpeg" alt="Jam Tangan Casio">
+                        <div class="product-overlay">
+                            <button class="btn-quick-view"><i class="fas fa-eye"></i> Lihat Cepat</button>
+                        </div>
+                    </div>
+                    <div class="product-details">
+                        <h3>Jam Tangan Casio</h3>
+                        <p>Jam tangan dengan desain vintage, masih akurat.</p>
+                        <div class="product-price">Rp 650.000</div>
+                        <div class="product-actions">
+                            <button class="btn-wishlist"><i class="far fa-gem"></i></button>
+                            <button class="btn-add-cart">+ Keranjang</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-item">
+                    <div class="product-image">
+                        <img src="img/sepatu_converse.jpeg" alt="Sepatu Converse">
+                        <div class="product-overlay">
+                            <button class="btn-quick-view"><i class="fas fa-eye"></i> Lihat Cepat</button>
+                        </div>
+                    </div>
+                    <div class="product-details">
                         <h3>Sepatu Converse</h3>
-                        <span class="product-condition">Kondisi: 75% baru</span>
-                        <p class="product-price">Rp 850.000</p>
-                        <p>Lokasi: Bandung</p>
-                        <a href="#" class="btn btn-secondary mt-md">Lihat Detail</a>
-                    </article>
+                        <p>Keadaan barang masih baik</p>
+                        <div class="product-price">Rp 1.200.000</div>
+                        <div class="product-actions">
+                            <button class="btn-wishlist"><i class="far fa-gem"></i></button>
+                            <button class="btn-add-cart">+ Keranjang</button>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </section>
-
-<!-- How It Works -->
-<section id="cara-kerja" class="section how-it-works">
-    <div class="container">
-        <h2 class="section-title">Bagaimana Cara Kerjanya?</h2>
-        
-        <div class="steps-container">
-            <article class="step-card">
-                <div class="step-header">
-                    <div class="step-icon">
-                        <i>🛒</i>
-                    </div>
-                    <h3 class="step-title">Untuk Pembeli</h3>
-                </div>
-                <ol class="step-list">
-                    <li class="step-item">
-                        <p class="step-text">Jelajahi katalog barang</p>
-                    </li>
-                    <li class="step-item">
-                        <p class="step-text">Pilih barang yang diinginkan</p>
-                    </li>
-                    <li class="step-item">
-                        <p class="step-text">Lakukan pembayaran</p>
-                    </li>
-                    <li class="step-item">
-                        <p class="step-text">Tunggu barang sampai</p>
-                    </li>
-                </ol>
-            </article>
-            
-            <article class="step-card">
-                <div class="step-header">
-                    <div class="step-icon">
-                        <i>💰</i>
-                    </div>
-                    <h3 class="step-title">Untuk Penjual</h3>
-                </div>
-                <ol class="step-list">
-                    <li class="step-item">
-                        <p class="step-text">Daftar sebagai penjual</p>
-                    </li>
-                    <li class="step-item">
-                        <p class="step-text">Unggah foto barang</p>
-                    </li>
-                    <li class="step-item">
-                        <p class="step-text">Tentukan harga</p>
-                    </li>
-                    <li class="step-item">
-                        <p class="step-text">Barang terjual</p>
-                    </li>
-                </ol>
-            </article>
         </div>
-    </div>
-</section>
+    </section>
 
-        <!-- Registration Form -->
-        <section id="daftar" class="section">
-            <div class="container">
-                <h2 class="section-title">Daftar Sekarang</h2>
-                
-                <form action="/register" method="POST" class="registration-form">
-                    <div class="form-group">
-                        <label for="nama" class="form-label">Nama Lengkap:</label>
-                        <input type="text" id="nama" name="nama" class="form-control" required>
+    <!-- Kategori dengan Tampilan Peta Harta Karun -->
+    <section id="categories" class="treasure-categories">
+        <div class="section-header">
+            <h2>Peta Harta Karun Kategori</h2>
+            <p>Jelajahi berbagai jenis harta karun yang tersedia</p>
+        </div>
+        <div class="categories-map">
+            <div class="category-island">
+                <div class="island-category" data-category="elektronik">
+                    <div class="category-icon">
+                        <i class="fas fa-laptop"></i>
                     </div>
-                    
-                    <div class="form-group">
-                        <label for="email" class="form-label">Email:</label>
-                        <input type="email" id="email" name="email" class="form-control" required>
+                    <h3>Elektronik</h3>
+                    <p>Gadget & Perangkat Elektronik</p>
+                    <span class="item-count">128 item</span>
+                </div>
+                <div class="island-category" data-category="furnitur">
+                    <div class="category-icon">
+                        <i class="fas fa-chair"></i>
                     </div>
-                    
-                    <div class="form-group">
-                        <label for="password" class="form-label">Password:</label>
-                        <input type="password" id="password" name="password" class="form-control" required>
+                    <h3>Furnitur</h3>
+                    <p>Perabotan Rumah Tangga</p>
+                    <span class="item-count">76 item</span>
+                </div>
+                <div class="island-category" data-category="pakaian">
+                    <div class="category-icon">
+                        <i class="fas fa-tshirt"></i>
                     </div>
-                    
-                    <div class="form-group">
-                        <label for="role" class="form-label">Saya ingin:</label>
-                        <select id="role" name="role" class="form-control">
-                            <option value="buyer">Beli barang</option>
-                            <option value="seller">Jual barang</option>
-                            <option value="both">Keduanya</option>
-                        </select>
+                    <h3>Pakaian</h3>
+                    <p>Fashion & Aksesoris</p>
+                    <span class="item-count">210 item</span>
+                </div>
+                <div class="island-category" data-category="buku">
+                    <div class="category-icon">
+                        <i class="fas fa-book-open"></i>
                     </div>
-                    
-                    <button type="submit" class="btn btn-primary">Daftar</button>
-                </form>
-            </div>
-        </section>
-
-        <!-- About Section -->
-        <section id="tentang" class="section">
-            <div class="container">
-                <h2 class="section-title">Tentang Kami</h2>
-                
-                <div class="about-content">
-                    <div>
-                        <p>Secondhand Treasure adalah platform jual beli barang bekas yang aman dan terpercaya. Kami memudahkan Anda untuk menemukan barang bekas berkualitas dengan harga terjangkau.</p>
-                    </div>
-                    
-                    <address class="contact-info">
-                        <p>📧 info@secondhantreasure.com</p>
-                        <p>📞 (628) 8888-8888</p>
-                        <p>📍 Jl. KS.Tubun</p>
-                    </address>
+                    <h3>Buku & Media</h3>
+                    <p>Literatur & Koleksi</p>
+                    <span class="item-count">95 item</span>
                 </div>
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-container">
-                <div>
-                    <h3>Secondhand Treasure</h3>
-                    <p>Platform jual beli barang bekas terpercaya di Indonesia</p>
-                </div>
+    <!-- Tentang Kami dengan Tema Ekspedisi -->
+    <section id="about" class="treasure-about">
+        <div class="about-container">
+            <div class="about-content">
+                <h2>Ekspedisi Secondhand Treasure</h2>
+                <p>Kami adalah Toko serta komunitas pemburu Harta Karun yang bertujuan untuk menemukan barang-barang bekas berkualitas dan memberinya kehidupan baru. Seperti penjelajah di pulau harta karun, kami menjelajahi dunia barang bekas untuk menemukan harta tersembunyi.</p>
                 
-                <nav>
-                    <ul class="footer-nav">
-                        <li><a href="#" class="footer-link">Syarat & Ketentuan</a></li>
-                        <li><a href="#" class="footer-link">Kebijakan Privasi</a></li>
-                        <li><a href="#" class="footer-link">Bantuan</a></li>
+                <div class="about-features">
+                    <div class="feature">
+                        <div class="feature-icon">
+                            <i class="fas fa-map-marked-alt"></i>
+                        </div>
+                        <div class="feature-text">
+                            <h4>Pemetaan Harta Karun</h4>
+                            <p>Kami memetakan setiap barang dengan detail untuk memastikan kualitas dan asal-usulnya.</p>
+                        </div>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">
+                            <i class="fas fa-award"></i>
+                        </div>
+                        <div class="feature-text">
+                            <h4>Kualitas Terjamin</h4>
+                            <p>Setiap harta karun melalui proses inspeksi ketat sebelum dipajang.</p>
+                        </div>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">
+                            <i class="fas fa-recycle"></i>
+                        </div>
+                        <div class="feature-text">
+                            <h4>Ramah Lingkungan</h4>
+                            <p>Dengan membeli barang bekas, Anda membantu mengurangi limbah elektronik.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer dengan Tema Peta Harta Karun -->
+    <footer class="treasure-footer">
+        <div class="footer-container">
+            <div class="footer-main">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <i class="fas fa-treasure-chest"></i>
+                        <span>Secondhand Treasure</span>
+                    </div>
+                    <p>Menemukan harta karun tersembunyi di setiap barang bekas.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Ekspedisi</h4>
+                    <ul>
+                        <li><a href="#">Peta Harta Karun</a></li>
+                        <li><a href="#">Panduan Pemburu</a></li>
+                        <li><a href="#">Jelajahi Kategori</a></li>
+                        <li><a href="#">Petualangan Terbaru</a></li>
                     </ul>
-                </nav>
+                </div>
+                <div class="footer-links">
+                    <h4>Bantuan</h4>
+                    <ul>
+                        <li><a href="#">Cara Berburu</a></li>
+                        <li><a href="#">Panduan Pengiriman</a></li>
+                        <li><a href="#">Kebijakan Return</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-newsletter">
+                    <h4>Bergabung dengan Ekspedisi</h4>
+                    <p>Dapatkan pemberitahuan saat harta karun baru ditemukan!</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Email Anda">
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
             </div>
-            
-            <div class="copyright">
-                <p>&copy; 2025 Secondhand Treasure. Semua hak dilindungi.</p>
-                <p>Inspired By : <a href="https://preloved.co.id/" target="_blank" class="footer-link">Preloved</a></p>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Secondhand Treasure. Semua harta karun dilindungi.</p>
+                <p>Website ini terinspirasi oleh : <a href link ="https://preloved.co.id/" target="_blank" >Preloved> </a></p> 
+                <div class="footer-badges">
+                    <span><i class="fas fa-shield-alt"></i> Transaksi Aman</span>
+                    <span><i class="fas fa-shipping-fast"></i> Pengiriman Cepat</span>
+                    <span><i class="fas fa-gem"></i> Kualitas Terjamin</span>
+                </div>
             </div>
         </div>
     </footer>
+
+    <script>
+        // Interaktivitas untuk spot harta karun di peta
+        document.querySelectorAll('.treasure-spot').forEach(spot => {
+            spot.addEventListener('mouseenter', function() {
+                this.querySelector('.spot-tooltip').style.opacity = '1';
+                this.querySelector('.spot-tooltip').style.transform = 'translateY(-10px)';
+            });
+            
+            spot.addEventListener('mouseleave', function() {
+                this.querySelector('.spot-tooltip').style.opacity = '0';
+                this.querySelector('.spot-tooltip').style.transform = 'translateY(0)';
+            });
+        });
+
+        // Toggle menu mobile
+        document.querySelector('.mobile-toggle').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+            this.classList.toggle('active');
+        });
+
+        // Animasi scroll untuk navigasi
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+                window.scrollTo({
+                    top: targetSection.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+                
+                // Tutup menu mobile setelah klik
+                document.querySelector('.nav-links').classList.remove('active');
+                document.querySelector('.mobile-toggle').classList.remove('active');
+            });
+        });
+    </script>
 </body>
 </html>
