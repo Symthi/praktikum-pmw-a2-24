@@ -601,8 +601,40 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .product-actions {
-    display: flex;
-    justify-content: space-between;
+    display: flex; /* Mengaktifkan Flexbox untuk tata letak yang lebih baik */
+    align-items: center; /* Menyelaraskan item secara vertikal di tengah */
+    gap: 10px; /* Memberi jarak antar elemen */
+    margin-top: 15px; /* Sesuaikan jika perlu jarak dari elemen di atasnya */
+    justify-content: flex-end; /* Menempatkan aksi ke kanan, agar tombol +Keranjang di kanan */
+}
+
+.product-actions .btn-wishlist {
+    flex-shrink: 0; /* Mencegah tombol wishlist menyusut */
+    padding: 8px; /* Sedikit padding agar ikon tidak terlalu mepet */
+    border-radius: 5px; /* Sedikit lengkungan pada sudut */
+    border: 1px solid #ddd;
+    background: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: #ddd; /* Warna default */
+    transition: all 0.2s ease;
+}
+
+.product-actions .btn-add-cart {
+    flex-grow: 1; /* Membuat tombol keranjang mengambil sisa ruang */
+    padding: 10px 15px;
+    border: none;
+    background-color: var(--dark-blue);
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.product-actions .btn-add-cart:hover {
+    background-color: var(--primary-gold); /* Mengubah warna saat hover */
 }
 
 .btn-wishlist {
@@ -1077,4 +1109,263 @@ h1, h2, h3, h4, h5, h6 {
     .products-grid {
         grid-template-columns: 1fr;
     }
+}
+
+/* Style untuk Modal Produk */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    padding: 20px;
+}
+
+.modal-content {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    max-width: 500px;
+    width: 100%;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.modal-content img {
+    max-width: 100%;
+    height: 250px;
+    object-fit: contain;
+    margin-bottom: 1rem;
+}
+
+.modal-content h2 {
+    color: var(--dark-blue);
+    margin-bottom: 0.5rem;
+}
+
+.modal-content p {
+    color: #666;
+    margin-bottom: 1.5rem;
+}
+
+.modal-price {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--primary-gold);
+}
+
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 2rem;
+    color: #999;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.modal-close:hover {
+    color: #333;
+}
+
+/* Style untuk tombol keranjang setelah ditambahkan */
+.btn-add-cart.added {
+    background-color: #28a745; 
+}
+
+/* Style untuk Notifikasi Samping (Toast) */
+#notification-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.notification {
+    padding: 15px 20px;
+    border-radius: 8px;
+    color: white;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    animation: slideIn 0.3s ease-out;
+    opacity: 0.95;
+}
+
+/* Tipe Notifikasi */
+.notification.success {
+    background-color: #28a745; 
+}
+
+.notification.info {
+    background-color: #17a2b8; 
+}
+
+.notification.error {
+    background-color: #dc3545; 
+}
+
+/* Animasi */
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 0.95;
+    }
+}
+
+.notification.fade-out {
+    animation: slideOut 0.5s ease-in forwards;
+}
+
+@keyframes slideOut {
+    from {
+        transform: translateX(0);
+        opacity: 0.95;
+    }
+    to {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+
+/* Style Tambahan untuk Detail di Modal */
+.modal-title {
+    margin-bottom: 8px;
+}
+
+.modal-rating {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    margin-bottom: 16px;
+    color: #f39c12;
+    font-size: 1.1rem;
+}
+
+.modal-rating span {
+    color: #666;
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin-left: 8px;
+}
+
+.modal-full-description {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.modal-meta {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+}
+
+.meta-item {
+    font-size: 0.9rem;
+    color: #333;
+}
+
+.meta-item strong {
+    color: var(--dark-blue);
+}
+
+.cart-count.hidden {
+    display: none;
+}
+
+/* Style Tambahan untuk Modal Panduan Pemburu */
+.guide-modal-content .modal-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: var(--dark-blue);
+}
+
+.guide-intro {
+    font-size: 1rem;
+    color: #666;
+    margin-top: -10px;
+    margin-bottom: 25px;
+}
+
+.guide-list {
+    list-style: none;
+    text-align: left;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.guide-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.guide-icon {
+    font-size: 1.5rem;
+    color: var(--primary-gold);
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: var(--light-sand);
+}
+
+.guide-text h4 {
+    margin: 0 0 5px 0;
+    color: var(--dark-blue);
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1.1rem;
+}
+
+.guide-text p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #555;
+    line-height: 1.5;
+}
+
+.guide-closing {
+    margin-top: 25px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: var(--dark-blue);
+}
+
+.notification.error {
+    background-color: #dc3545;
 }
