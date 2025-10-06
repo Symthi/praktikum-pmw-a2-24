@@ -1,3 +1,12 @@
+<?php
+session_start(); // Memulai session
+
+// PROTEKSI HALAMAN: Cek apakah user sudah login. Jika belum, tendang ke halaman login.
+if (!isset($_SESSION['username'])) {
+    header("Location: login.php");
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -9,38 +18,41 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <!-- Navigation dengan Peta Harta Karun -->
-    <nav class="treasure-nav">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <div class="compass-icon">
-                    <i class="fas fa-compass"></i>
-                </div>
-                <h1>Secondhand Treasure</h1>
-                <div class="treasure-chest">
-                    <i class="fas fa-chess-queen"></i>
-                </div>
+    <div id="notification-container"></div>
+
+<nav class="treasure-nav">
+    <div class="nav-container">
+        <div class="nav-logo">
+            <div class="compass-icon">
+                <i class="fas fa-compass"></i>
             </div>
-            <ul class="nav-links">
-                <li><a href="#home" class="nav-link"><i class="fas fa-home"></i> Beranda</a></li>
-                <li><a href="#products" class="nav-link"><i class="fas fa-gem"></i> Harta Karun</a></li>
-                <li><a href="#categories" class="nav-link"><i class="fas fa-map"></i> Peta Kategori</a></li>
-                <li><a href="#about" class="nav-link"><i class="fas fa-ship"></i> Tentang Kami</a></li>
-                <li><a href="#contact" class="nav-link"><i class="fas fa-anchor"></i> Kontak</a></li>
-            </ul>
-            <div class="nav-actions">
-                <button class="btn-search"><i class="fas fa-search"></i></button>
-                <button class="btn-cart"><i class="fas fa-treasure-chest"></i> <span class="cart-count">0</span></button>
-            </div>
-            <div class="mobile-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
+            <h1>Secondhand Treasure</h1>
+            <div class="treasure-chest">
+                <i class="fas fa-chess-queen"></i>
             </div>
         </div>
-    </nav>
+        <ul class="nav-links">
+            <li><a href="#home" class="nav-link"><i class="fas fa-home"></i> Beranda</a></li>
+            <li><a href="#products" class="nav-link"><i class="fas fa-gem"></i> Harta Karun</a></li>
+            <li><a href="#categories" class="nav-link"><i class="fas fa-map"></i> Peta Kategori</a></li>
+            <li><a href="#about" class="nav-link"><i class="fas fa-ship"></i> Tentang Kami</a></li>
+            
+            <!-- PERBAIKAN: Hapus class nav-link untuk link yang bukan smooth scroll -->
+            <li><a href="dashboard.php"><i class="fas fa-user-shield"></i> Dashboard</a></li>
+            <li><a href="logout.php"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+        </ul>
+        <div class="nav-actions">
+            <button class="btn-search"><i class="fas fa-search"></i></button>
+            <button class="btn-cart"><i class="fas fa-treasure-chest"></i> <span class="cart-count">0</span></button>
+        </div>
+        <div class="mobile-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+</nav>
 
-    <!-- Hero Section dengan Peta Harta Karun Interaktif -->
     <section id="home" class="hero-treasure">
         <div class="treasure-map">
             <div class="map-container">
@@ -89,7 +101,6 @@
         </div>
     </section>
 
-    <!-- Produk Unggulan dengan Tampilan Peti Harta Karun -->
     <section id="products" class="treasure-products">
         <div class="section-header">
             <h2>Peti Harta Karun Terkini</h2>
@@ -190,7 +201,6 @@
         </div>
     </section>
 
-    <!-- Kategori dengan Tampilan Peta Harta Karun -->
     <section id="categories" class="treasure-categories">
         <div class="section-header">
             <h2>Peta Harta Karun Kategori</h2>
@@ -234,7 +244,6 @@
         </div>
     </section>
 
-    <!-- Tentang Kami dengan Tema Ekspedisi -->
     <section id="about" class="treasure-about">
         <div class="about-container">
             <div class="about-content">
@@ -274,7 +283,6 @@
         </div>
     </section>
 
-    <!-- Footer dengan Tema Peta Harta Karun -->
     <footer class="treasure-footer">
         <div class="footer-container">
             <div class="footer-main">
@@ -320,7 +328,7 @@
             </div>
             <div class="footer-bottom">
                 <p>&copy; 2025 Secondhand Treasure. Semua harta karun dilindungi.</p>
-                <p>Website ini terinspirasi oleh : <a href link ="https://preloved.co.id/" target="_blank" >Preloved> </a></p> 
+                <p>Website ini terinspirasi oleh : <a href="https://preloved.co.id/" target="_blank" >Preloved</a></p> 
                 <div class="footer-badges">
                     <span><i class="fas fa-shield-alt"></i> Transaksi Aman</span>
                     <span><i class="fas fa-shipping-fast"></i> Pengiriman Cepat</span>
@@ -330,7 +338,7 @@
         </div>
     </footer>
 
-<script src="script.js"></script>
+    <script src="script.js"></script>
 
 </body>
 </html>
