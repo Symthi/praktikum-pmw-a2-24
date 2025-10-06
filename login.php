@@ -1,21 +1,17 @@
 <?php
 session_start();
 
-// Jika user sudah login, arahkan langsung ke dashboard
 if (isset($_SESSION['username'])) {
     header("Location: dashboard.php");
     exit();
 }
 
 $error = '';
-// Memeriksa apakah form telah disubmit menggunakan method POST
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    // Autentikasi sederhana
     if ($username === 'admin' && $password === 'password123') {
-        // Jika berhasil, simpan username ke dalam session
         $_SESSION['username'] = $username;
         header("Location: dashboard.php");
         exit();
@@ -37,44 +33,38 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body>
     <div id="notification-container"></div>
     
-    <!-- Elemen dekoratif -->
-    <div class="treasure-decoration">
-        <i class="fas fa-gem"></i>
-    </div>
-    <div class="treasure-decoration">
-        <i class="fas fa-compass"></i>
-    </div>
-    <div class="treasure-decoration">
-        <i class="fas fa-treasure-chest"></i>
-    </div>
-    
-    <div class="treasure-map-background"></div>
-    
     <div class="auth-container">
-        <div class="auth-box">
+        <div class="treasure-decoration"><i class="fas fa-gem"></i></div>
+        <div class="treasure-decoration"><i class="fas fa-compass"></i></div>
+        <div class="treasure-decoration"><i class="fas fa-key"></i></div>
+        
+        <div class="treasure-map-background"></div>
+        
+        <div class="auth-box animated">
             <div class="auth-header">
                 <div class="treasure-icon">
                     <i class="fas fa-treasure-chest"></i>
                 </div>
                 <h2>Login Pemburu Harta</h2>
-                <p>Masukkan kredensial Anda untuk memulai ekspedisi pencarian harta karun</p>
+                <p>Masukkan kredensial Anda untuk memulai ekspedisi.</p>
             </div>
             
             <?php if ($error): ?>
                 <div class="error-message">
                     <i class="fas fa-exclamation-triangle"></i> 
-                    <?php echo $error; ?>
+                    <?php echo htmlspecialchars($error); ?>
                 </div>
             <?php endif; ?>
 
             <form method="POST" action="login.php" class="auth-form">
-                <div class="input-group">
-                    <label for="username">Username Pemburu</label>
-                    <input type="text" id="username" name="username" required placeholder="Masukkan username Anda">
+                <div class="input-group-interactive">
+                    <input type="text" id="username" name="username" class="input-field" placeholder=" " required>
+                    <label for="username" class="input-label"><i class="fas fa-user"></i> Username Pemburu</label>
                 </div>
-                <div class="input-group">
-                    <label for="password">Kata Sandi Rahasia</label>
-                    <input type="password" id="password" name="password" required placeholder="Masukkan kata sandi Anda">
+                <div class="input-group-interactive">
+                    <input type="password" id="password" name="password" class="input-field" placeholder=" " required>
+                    <label for="password" class="input-label"><i class="fas fa-lock"></i> Kata Sandi Rahasia</label>
+                    <span class="password-toggle"><i class="fas fa-eye"></i></span>
                 </div>
                 <button type="submit" class="btn-auth">
                     <i class="fas fa-map-marked-alt"></i> Mulai Ekspedisi
@@ -82,7 +72,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </form>
             
             <div class="auth-note">
-                <p><i class="fas fa-scroll"></i> Petunjuk: gunakan username <strong>admin</strong> dan password <strong>password123</strong></p>
+                <p><i class="fas fa-scroll"></i> <strong>Petunjuk:</strong> admin & password123</p>
             </div>
         </div>
     </div>
@@ -92,7 +82,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Menangani notifikasi logout
     <?php if (isset($_GET['status']) && $_GET['status'] === 'logout_success'): ?>
         document.addEventListener('DOMContentLoaded', () => {
-            showNotification('Ekspedisi telah berakhir. Sampai jumpa lagi, Pemburu Harta!', 'info');
+            if (typeof showNotification === 'function') {
+                showNotification('Ekspedisi telah berakhir. Sampai jumpa lagi!', 'info');
+            }
         });
     <?php endif; ?>
     </script>

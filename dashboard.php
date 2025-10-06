@@ -34,7 +34,7 @@ if (!isset($_SESSION['username'])) {
             </div>
             <ul class="nav-links">
                 <li><a href="index.php" class="nav-link"><i class="fas fa-home"></i> Kembali ke Beranda</a></li>
-                <li><a href="logout.php"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                <li><a href="logout.php" class="nav-link logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
             </ul>
             <div class="nav-actions">
                 <button class="btn-search"><i class="fas fa-search"></i></button>
@@ -48,7 +48,7 @@ if (!isset($_SESSION['username'])) {
         </div>
     </nav>
 
-    <!-- Hero Section dari index.php -->
+    <!-- Hero Section -->
     <section id="home" class="hero-treasure">
         <div class="treasure-map">
             <div class="map-container">
@@ -77,7 +77,7 @@ if (!isset($_SESSION['username'])) {
                 <h2>Selamat Datang, <span class="highlight"><?php echo htmlspecialchars($_SESSION['username']); ?>!</span></h2>
                 <p>Selamat datang di pusat ekspedisi Secondhand Treasure! Sebagai <?php echo htmlspecialchars($_SESSION['username']); ?>, Anda memiliki akses penuh untuk menjelajahi semua harta karun yang tersembunyi.</p>
                 <div class="hero-actions">
-                    <button class="btn-treasure" onclick="location.href='#products'">Mulai Pencarian <i class="fas fa-map-marked-alt"></i></button>
+                    <button class="btn-treasure" onclick="location.href='index.php'">Mulai Pencarian <i class="fas fa-map-marked-alt"></i></button>
                     <button class="btn-guide">Panduan Pemburu <i class="fas fa-scroll"></i></button>
                 </div>
             </div>
@@ -150,7 +150,7 @@ if (!isset($_SESSION['username'])) {
             <p>Kelola ekspedisi Anda dengan mudah</p>
         </div>
         <div class="actions-grid">
-            <div class="action-card" onclick="location.href='index.php#products'">
+            <div class="action-card" onclick="location.href='index.php'">
                 <div class="action-icon">
                     <i class="fas fa-gem"></i>
                 </div>
@@ -200,7 +200,7 @@ if (!isset($_SESSION['username'])) {
                 <div class="footer-links">
                     <h4>Ekspedisi</h4>
                     <ul>
-                        <li><a href="index.php#products">Harta Karun</a></li>
+                        <li><a href="index.php">Harta Karun</a></li>
                         <li><a href="index.php#categories">Peta Kategori</a></li>
                         <li><a href="index.php#about">Tentang Kami</a></li>
                     </ul>
@@ -229,7 +229,7 @@ if (!isset($_SESSION['username'])) {
                 const productType = this.getAttribute('data-product');
                 showNotification(`Membuka kategori ${productType}...`, 'info');
                 setTimeout(() => {
-                    window.location.href = `index.php#${productType}`;
+                    window.location.href = `index.php`;
                 }, 1000);
             });
         });
@@ -243,6 +243,12 @@ if (!isset($_SESSION['username'])) {
                     showGuideModal();
                 }
             }, 500);
+        });
+
+        // Mobile menu toggle
+        document.querySelector('.mobile-toggle').addEventListener('click', function() {
+            this.classList.toggle('active');
+            document.querySelector('.nav-links').classList.toggle('active');
         });
     </script>
 </body>

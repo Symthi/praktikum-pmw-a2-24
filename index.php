@@ -32,15 +32,15 @@ if (!isset($_SESSION['username'])) {
             </div>
         </div>
         <ul class="nav-links">
-            <li><a href="#home" class="nav-link"><i class="fas fa-home"></i> Beranda</a></li>
-            <li><a href="#products" class="nav-link"><i class="fas fa-gem"></i> Harta Karun</a></li>
-            <li><a href="#categories" class="nav-link"><i class="fas fa-map"></i> Peta Kategori</a></li>
-            <li><a href="#about" class="nav-link"><i class="fas fa-ship"></i> Tentang Kami</a></li>
-            
-            <!-- PERBAIKAN: Hapus class nav-link untuk link yang bukan smooth scroll -->
-            <li><a href="dashboard.php"><i class="fas fa-user-shield"></i> Dashboard</a></li>
-            <li><a href="logout.php"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
-        </ul>
+    <li><a href="#home" class="nav-link"><i class="fas fa-home"></i> Beranda</a></li>
+    <li><a href="#products" class="nav-link"><i class="fas fa-gem"></i> Harta Karun</a></li>
+    <li><a href="#categories" class="nav-link"><i class="fas fa-map"></i> Peta Kategori</a></li>
+    <li><a href="#about" class="nav-link"><i class="fas fa-ship"></i> Tentang Kami</a></li>
+    
+    <!-- TAMBAHKAN class nav-link untuk Dashboard dan Logout -->
+    <li><a href="dashboard.php" class="nav-link"><i class="fas fa-user-shield"></i> Dashboard</a></li>
+    <li><a href="logout.php" class="nav-link"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+</ul>
         <div class="nav-actions">
             <button class="btn-search"><i class="fas fa-search"></i></button>
             <button class="btn-cart"><i class="fas fa-treasure-chest"></i> <span class="cart-count">0</span></button>
